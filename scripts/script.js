@@ -14,3 +14,24 @@ hamburger.addEventListener('click', () => {
     navbarMenu.classList.toggle('active');
     hamburger.classList.toggle('open');
 });
+
+// Get references to the elements
+const scrollContainer = document.querySelector('.testimonialScrollContainer');
+const leftButton = document.querySelector('.left-btn');
+const rightButton = document.querySelector('.right-btn');
+
+// Function to scroll left
+leftButton.addEventListener('click', () => {
+  scrollContainer.scrollBy({
+    left: -300, // Adjust the number here to scroll by more or less
+    behavior: 'smooth' // Smooth scroll
+  });
+});
+
+// Function to scroll right
+rightButton.addEventListener('click', () => {
+  scrollContainer.scrollBy({
+    left: 300, // Adjust the number here to scroll by more or less
+    behavior: 'smooth' // Smooth scroll
+  });
+});
