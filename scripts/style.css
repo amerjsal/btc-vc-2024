@@ -235,10 +235,10 @@ footer p::before {
 /* Course Timeline Container Styling */
 .courseTimelineContainer {
     position: relative;
-    margin: 40px auto; /* Center the timeline */
+    margin: 40px auto;
     padding: 20px;
-    width: 90%; /* Reduce the width so it's not full-width */
-    max-width: 1200px; /* Maximum width to avoid being too wide on large screens */
+    width: 90%; 
+    max-width: 1200px; 
 }
 
 .courseTimelineContainer h2 {
@@ -471,16 +471,16 @@ ul.scholarships li:hover, ul.moreScholarships li:hover {
 
 /* Hamburger Icon (Initial styling, shown only on small screens) */
 .hamburger {
-    display: none; /* Hidden on large screens */
+    display: none; 
     position: absolute;
-    top: 20px;  /* Adjust to place it near the top of the header */
-    right: 20px; /* Adjust to place it near the right edge of the header */
+    top: 20px;  
+    right: 20px; 
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 25px;
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    z-index: 1000;
 }
 
 /* Hamburger bars (lines) */
@@ -513,11 +513,11 @@ ul.scholarships li:hover, ul.moreScholarships li:hover {
 /* Show the hamburger icon on smaller screens */
 @media (max-width: 1200px) {
     .navbarMenu {
-        display: none; /* Hide the navbar links */
+        display: none; 
     }
 
     .hamburger {
-        display: flex; /* Show the hamburger icon on small screens */
+        display: flex; 
     }
 
     /* Toggle the menu when hamburger is clicked (JS will add a class) */
@@ -550,6 +550,95 @@ ul.scholarships li:hover, ul.moreScholarships li:hover {
     }
 
     .hamburger.open span {
-        opacity: 0; /* Hide the middle line */
+        opacity: 0; 
     }
+}
+
+/* Testimonial Scrollable Container */
+.testimonialScrollContainer {
+    display: flex;
+    overflow-x: auto; 
+    gap: 20px; 
+    padding: 20px;
+    max-width: 100%; 
+    margin: 0 auto;
+    scroll-snap-type: x mandatory; 
+}
+
+/* Default behavior for student containers (on small screens) */
+.studentContainer {
+    flex: 0 0 300px; 
+    scroll-snap-align: start; 
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive behavior: full-width containers on large screens */
+@media (min-width: 1024px) {
+    .testimonialScrollContainer {
+        overflow-x: hidden; 
+        gap: 30px; 
+    }
+
+    .studentContainer {
+        flex: 1 0 100%; 
+    }
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 100;
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+/* Optional: Hide the scrollbar for a cleaner look */
+.testimonialScrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Enable smooth scrolling */
+.testimonialScrollContainer {
+    scroll-behavior: smooth;
+}
+
+/* Testimonial Image Styling */
+.studentTestimonial img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Caption Styling */
+.studentTestimonial figcaption {
+    font-size: 1.1rem;
+    color: #34495e;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.studentTestimonial h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
